@@ -1,0 +1,172 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+html {
+    min-height: 1000px;
+    font-family: 'helvetica neue';
+
+    background: #FF416C;
+    background-image: -webkit-linear-gradient(-115deg, #fff 50%, #FF416C 50%);
+    
+  }
+  
+  h1 {
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .box {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #FF416C;
+  }
+  
+  #heading {
+    background-color: #FF416C;
+    text-align: center;
+  }
+  .bi-person-circle{
+    color: #fff;
+    font-size: 60px;
+    position: relative;
+    right: 0;
+  }
+  #heading a{
+    text-decoration: none;
+
+  }
+  .item {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F1F1F1;
+    position: relative;
+  }
+  
+  .item:last-child {
+    border-bottom: 0;
+  }
+  .item a{
+    text-decoration: none;
+    position: absolute;
+    right: 5%;
+    color: red;
+    font-size: x-large;
+  }
+  input[type="search"] {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px 10px 10px 50px;
+    
+  }
+  .search{
+    position: relative;
+  }
+  .bi-search-heart{
+    position: absolute;
+    color: #FF416C;
+    font-size: x-large;
+    top: 20%;
+    left: 3%;
+  }
+  input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: #FF416C;
+  }
+  
+  input[type="checkbox"] {
+    margin: 20px;
+  }
+  
+  p {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #00204a;
+  }
+  
+  form {
+    text-align: center;
+    margin-left: 20px;
+  }
+  
+  button {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #FF416C;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 6px;
+    border-width: 0;
+  }
+  
+  input[type="text"] {
+    text-align: center;
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 313px;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #FF416C;
+  }
+  
+  ::placeholder {
+    color: grey;
+    opacity: 1;
+  }
+  
+  footer {
+    color: white;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .confirmation-message {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .confirm, .cancel {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .confirm {
+    background-color: green;
+    color: white;
+  }
+  
+  .cancel {
+    background-color: red;
+    color: white;
+  }
+  
+  

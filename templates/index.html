@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp</title>
+    <!-- css link -->
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'style.css' %}">
+
+    <!-- bootstrap link -->
+
+</head>
+<body>
+    <div class="box" id="heading">
+        <div>
+            <i class="bi bi-person-circle"></i>
+            <a href="/logout/">Logout</a>
+
+        </div>
+        <div class="date">
+            <h1>{{date}}</h1>
+        </div>
+    </div>
+
+    <div class="box search">
+        <i class="bi bi-search-heart"></i><input type="search" placeholder="search tasks...">
+    </div>
+
+    <div class="box">
+        <!-- loop -->
+        {% for item in all_items %}
+        <div class="item" >
+            <input type="checkbox">
+            <p>{{item.name}}</p>
+            <a href="{% url 'delete-message' item.id %}"><i class="bi bi-x"></i></a>
+        </div>
+        {% endfor %}
+
+        <form action="" class="item" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="New Item" name="item">
+            <button type="submit">+</button>
+        </form>
+    </div>
+
+    
+
+</body>
+</html>
