@@ -18,7 +18,7 @@
 }
 body{
     background: #FF416C;
-    background-image: -webkit-linear-gradient(65deg, #fff, #FF416C);
+    background-image: -webkit-linear-gradient(65deg, #000, #FF416C);
  
 }
 .background{
@@ -133,7 +133,9 @@ button{
 .social i{
   margin-right: 4px;
 }
-
+i {
+    color: blue;
+}
     </style>
 </head>
 <body>
@@ -141,6 +143,11 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
+        {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                       {{ message }}
+                    </div>
+                    {% endif %}
     <form action="" method="post">
         {%csrf_token%}
         <h3>Login Here</h3>

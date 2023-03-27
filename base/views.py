@@ -6,6 +6,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from .models import Items
 from datetime import datetime
+
+
 # Create your views here.
 def login_page(request):
     page = 'login'
@@ -27,11 +29,13 @@ def login_page(request):
             return redirect('home')
         else:
             messages.error(request, 'username or password does not exist')
-    return render(request, 'login.html', {'page': page})
+    return render(request, 'login.html', {'page': page, 'messages': messages})
+
 
 def logout_user(request):
     logout(request)
     return redirect('login')
+
 
 def register_page(request):
     form = UserCreationForm()
@@ -45,11 +49,12 @@ def register_page(request):
             return redirect('home')
         else:
             messages.error(request, 'An error occured during registration')
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'register.html', {'form': form, 'messages': messages})
+
 
 @login_required(login_url='login')
 def home(request):
-    all_items = Items.objects.filter(user = request.user)
+    all_items = Items.objects.filter(user=request.user)
     date = datetime.now()
     print(date)
     if request.method == 'POST':
@@ -57,7 +62,8 @@ def home(request):
             user=request.user,
             name=request.POST.get('item')
         )
-    return render(request,'index.html', {'all_items':all_items, 'date': date})
+    return render(request, 'index.html', {'all_items': all_items, 'date': date})
+
 
 @login_required(login_url='login')
 def delete_message(request, id):
@@ -65,4 +71,4 @@ def delete_message(request, id):
     if request.method == 'POST':
         item.delete()
         return redirect('home')
-    return render(request, 'delete_page.html', {"obj":item})
+    return render(request, 'delete_page.html', {"obj": item})

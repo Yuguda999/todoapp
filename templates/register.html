@@ -18,7 +18,7 @@
 }
 body{
     background: #FF416C;
-    background-image: -webkit-linear-gradient(65deg, #fff 50%, #FF416C 50%);    
+    background-image: -webkit-linear-gradient(-115deg, #000 50%, #FF416C 50%);
 }
 .background{
     width: 430px;
@@ -140,6 +140,11 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
+        {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                       {{ message }}
+                    </div>
+                    {% endif %}
     <form action="" method="post">
         {%csrf_token%}
         <h3>Register Here</h3>
